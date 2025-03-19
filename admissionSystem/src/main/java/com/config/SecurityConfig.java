@@ -14,10 +14,9 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
-                .csrf(csrf -> csrf.disable()) // Disable CSRF for testing
+                .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/**").permitAll() // Allow API access
-                        .requestMatchers("/uploads/**").permitAll() // Allow public access to uploads
+                        .requestMatchers("/uploads/**").permitAll()  // ✅ Allow public access to uploads
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));

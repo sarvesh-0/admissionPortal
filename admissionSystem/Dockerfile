@@ -1,13 +1,15 @@
-# Use an official OpenJDK runtime as a parent image
-FROM openjdk:17-jdk-slim
-
-# Set the working directory
+# Use a Maven image to build the JAR
+FROM maven:3.8.5-openjdk-17 AS build
 WORKDIR /app
+COPY . .
+RUN mvn clean package -DskipTests
 
-# Copy the built JAR file from the target directory
-COPY target/*.jar app.jar
+# Use a smaller JDK image to run the JAR
+FROM openjdk:17-jdk-slim
+WORKDIR /app
+COPY --from=build /app/target/*.jar app.jar
 
-# Expose the application port (Change it if your application runs on a different port)
+# Expose the application port
 EXPOSE 8080
 
 # Run the application

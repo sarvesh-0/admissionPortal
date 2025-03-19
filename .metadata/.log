@@ -2358,3 +2358,20 @@ Binding(CTRL+SHIFT+C,
 
 !ENTRY org.eclipse.ui 2 2 2025-03-19 11:57:12.549
 !MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
+
+!ENTRY org.eclipse.egit.core 4 0 2025-03-19 18:59:38.044
+!MESSAGE An exception occurred during push on URI https://github.com/sarvesh-0/admissionPortal.git: https://github.com/sarvesh-0/admissionPortal.git: not authorized
+!STACK 0
+org.eclipse.jgit.errors.TransportException: https://github.com/sarvesh-0/admissionPortal.git: not authorized
+	at org.eclipse.jgit.transport.TransportHttp.connect(TransportHttp.java:685)
+	at org.eclipse.jgit.transport.TransportHttp.connect(TransportHttp.java:627)
+	at org.eclipse.jgit.transport.TransportHttp.openPush(TransportHttp.java:541)
+	at org.eclipse.jgit.transport.PushProcess.execute(PushProcess.java:138)
+	at org.eclipse.jgit.transport.Transport.push(Transport.java:1473)
+	at org.eclipse.egit.core.op.PushOperation.run(PushOperation.java:254)
+	at org.eclipse.egit.ui.internal.push.PushJob.performJob(PushJob.java:86)
+	at org.eclipse.egit.ui.internal.jobs.RepositoryJob.run(RepositoryJob.java:59)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.egit.ui 4 0 2025-03-19 18:59:38.045
+!MESSAGE Can't connect to any repository: https://github.com/sarvesh-0/admissionPortal.git (https://github.com/sarvesh-0/admissionPortal.git: not authorized)

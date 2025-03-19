@@ -1397,3 +1397,24 @@ Caused by: org.apache.maven.model.building.ModelBuildingException: 1 problem was
 2025-03-19 18:58:42,988 [Worker-62: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
 2025-03-19 18:58:42,988 [Worker-62: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
 2025-03-19 18:58:42,991 [Worker-62: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\SETTribes\AdmissionSystem\admissionSystem\src\test\resources
+2025-03-19 19:03:50,268 [Worker-66: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-03-19 19:03:50,268 [Worker-66: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-03-19 19:03:50,268 [Worker-66: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\SETTribes\AdmissionSystem\admissionSystem\src\test\resources
+2025-03-19 19:04:59,630 [Worker-66: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-03-19 19:04:59,631 [Worker-66: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-03-19 19:04:59,632 [Worker-66: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\SETTribes\AdmissionSystem\admissionSystem\src\test\resources
+2025-03-19 19:05:04,800 [Worker-66: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-03-19 19:05:04,800 [Worker-66: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-03-19 19:05:04,803 [Worker-66: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\SETTribes\AdmissionSystem\admissionSystem\src\test\resources
+2025-03-19 19:05:07,553 [Worker-67: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-03-19 19:05:07,553 [Worker-67: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-03-19 19:05:07,554 [Worker-67: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\SETTribes\AdmissionSystem\admissionSystem\src\test\resources
+2025-03-19 19:13:17,147 [Worker-58: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-03-19 19:13:17,148 [Worker-58: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-03-19 19:13:17,149 [Worker-58: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\SETTribes\AdmissionSystem\admissionSystem\src\test\resources
+2025-03-19 23:07:31,461 [Worker-73: Launching Executing install in D__SETTribes_AdmissionSystem_admissionSystem] INFO  o.e.m.i.launch.MavenLaunchDelegate - D:\SETTribes\AdmissionSystem\admissionSystem
+2025-03-19 23:07:31,461 [Worker-75: Launching Executing clean in D__SETTribes_AdmissionSystem_admissionSystem] INFO  o.e.m.i.launch.MavenLaunchDelegate - D:\SETTribes\AdmissionSystem\admissionSystem
+2025-03-19 23:07:31,463 [Worker-76: Launching Executing clean in D__SETTribes_AdmissionSystem_admissionSystem] INFO  o.e.m.i.launch.MavenLaunchDelegate - D:\SETTribes\AdmissionSystem\admissionSystem
+2025-03-19 23:07:31,467 [Worker-73: Launching Executing install in D__SETTribes_AdmissionSystem_admissionSystem] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -Ppom.xml -B -Dstyle.color=always install
+2025-03-19 23:07:31,470 [Worker-76: Launching Executing clean in D__SETTribes_AdmissionSystem_admissionSystem] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -Ppom.xml -B -Dstyle.color=always clean
+2025-03-19 23:07:31,470 [Worker-75: Launching Executing clean in D__SETTribes_AdmissionSystem_admissionSystem] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -Ppom.xml -B -Dstyle.color=always clean

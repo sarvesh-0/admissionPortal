@@ -1,0 +1,99 @@
+	package com.controller;
+
+import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
+import org.springframework.web.bind.annotation.*;
+
+import com.dto.AdmissionFormDTO;
+import com.entity.AdmissionForm;
+import com.service.AdmissionFormService;
+
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+@RestController
+@RequestMapping("/api/admissions")
+@CrossOrigin(origins = "http://localhost:3000") // VERY IMPORTANT for CORS
+public class AdmissionFormController {
+
+    @Autowired
+    private AdmissionFormService admissionFormService;
+
+    @PostMapping("/create")
+    public ResponseEntity<?> createAdmissionForm(@ModelAttribute @Valid AdmissionFormDTO formDTO, BindingResult result) {
+        if (result.hasErrors()) {
+            // Handle validation errors
+            Map<String, String> errors = new HashMap<>();
+            for (FieldError error : result.getFieldErrors()) {
+                errors.put(error.getField(), error.getDefaultMessage());
+            }
+            return ResponseEntity.badRequest().body(errors);
+        }
+
+        try {
+            AdmissionForm savedForm = admissionFormService.createAdmissionForm(formDTO);
+            return ResponseEntity.status(HttpStatus.CREATED).body(savedForm);
+        } catch (IOException e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                .body("Error uploading files: " + e.getMessage());
+        }
+    }
+  @GetMapping("/all")
+    public ResponseEntity<List<AdmissionForm>> getAllAdmissionForms() {
+        List<AdmissionForm> forms = admissionFormService.getAllForms();
+        return ResponseEntity.ok(forms);
+    }
+  
+  @GetMapping("/{id}")
+  public ResponseEntity<AdmissionForm> getAdmissionForm(@PathVariable("id") String id) {
+      try {
+          AdmissionForm form = admissionFormService.getAdmissionFormById(id);
+          return ResponseEntity.ok(form);
+      } catch (RuntimeException e) {
+          return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+      }
+  }
+
+
+  @PutMapping("/update/{id}")
+  public ResponseEntity<?> updateAdmissionForm(
+          @PathVariable String id,
+          @ModelAttribute @Valid AdmissionFormDTO formDTO,
+          BindingResult result) {
+
+      if (result.hasErrors()) {
+          Map<String, String> errors = new HashMap<>();
+          for (FieldError error : result.getFieldErrors()) {
+              errors.put(error.getField(), error.getDefaultMessage());
+          }
+          return ResponseEntity.badRequest().body(errors);
+      }
+
+      try {
+          AdmissionForm updatedForm = admissionFormService.updateAdmissionForm(id, formDTO);
+          return ResponseEntity.ok(updatedForm);
+      } catch (IOException e) {
+          return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                  .body("Error updating form: " + e.getMessage());
+      } catch (RuntimeException e){
+          return  ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+      }
+  }
+
+  @DeleteMapping("/delete/{id}")
+  public ResponseEntity<String> deleteAdmissionForm(@PathVariable String id) {
+     try{
+         admissionFormService.deleteAdmissionForm(id);
+         return ResponseEntity.ok("Admission form deleted successfully");
+     }catch (RuntimeException e){
+         return  ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+     }
+
+  }
+}

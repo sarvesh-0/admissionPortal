@@ -1,7 +1,9 @@
 # Use a Maven image to build the JAR
 FROM maven:3.8.5-openjdk-17 AS build
 WORKDIR /app
-COPY . .  # Copy everything into /app
+COPY pom.xml .
+RUN mvn dependency:go-offline  # Fetch dependencies first
+COPY src ./src
 RUN mvn clean package -DskipTests
 
 # Use a smaller JDK image to run the JAR

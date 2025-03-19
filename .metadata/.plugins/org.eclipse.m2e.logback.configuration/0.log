@@ -1957,3 +1957,10 @@ Caused by: org.codehaus.plexus.util.xml.pull.XmlPullParserException: processing 
 2025-03-20 00:14:14,421 [Worker-42: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
 2025-03-20 00:14:14,421 [Worker-42: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
 2025-03-20 00:14:14,423 [Worker-42: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\SETTribes\AdmissionSystem\admissionSystem\src\test\resources
+2025-03-20 00:21:20,196 [Worker-49: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.example:admissionSystem:0.0.1-SNAPSHOT @ D:\SETTribes\AdmissionSystem\admissionSystem\pom.xml.
+2025-03-20 00:21:20,672 [Worker-49: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-03-20 00:21:20,672 [Worker-49: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-03-20 00:21:20,676 [Worker-49: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\SETTribes\AdmissionSystem\admissionSystem\src\test\resources
+2025-03-20 00:21:22,337 [Worker-50: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-03-20 00:21:22,354 [Worker-50: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-03-20 00:21:22,359 [Worker-50: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\SETTribes\AdmissionSystem\admissionSystem\src\test\resources

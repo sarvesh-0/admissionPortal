@@ -17,6 +17,7 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/uploads/**").permitAll()  // ✅ Allow public access to uploads
+                        .requestMatchers("/api/admissions/all").permitAll()  // ✅ Allow public access to admission forms
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));

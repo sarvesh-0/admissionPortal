@@ -1,5 +1,3 @@
-package com.config;
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -16,8 +14,9 @@ public class SecurityConfig {
         http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/uploads/**").permitAll()  // ✅ Allow public access to uploads
-                        .requestMatchers("/api/admissions/all").permitAll()  // ✅ Allow public access to admission forms
+                        .requestMatchers("/uploads/**").permitAll()  // ✅ Public access to uploads
+                        .requestMatchers("/api/admissions/all").permitAll()  // ✅ Public access to all admissions
+                        .requestMatchers("/api/admissions/{id}").permitAll()  // ✅ ALLOW individual admissions
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
